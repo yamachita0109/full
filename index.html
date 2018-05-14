@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://dev.ltp.f-power.co.jp:4461/ct/test/tool/com.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+		crossorigin="anonymous">
+	<link href="./css/lib/jquery.fullpage.min.css" rel="stylesheet" type="text/css">
+	<link href="./css/index.css" rel="stylesheet" type="text/css">
+	<title>診断</title>
+	<script src="./json/sample.js"></script>
+</head>
+
+<body>
+<div class="loading"></div>
+<main id="container" class="hide">
+	<nav>
+		<a href="#" class="go-btn" data-page="1-1">
+			<i class="fa fa-cogs"></i>
+		</a>
+	</nav>
+
+	<!-- TOP -->
+	<div id="view-group">
+		<div class="section">
+			<div class="slide">
+				<div class="content">
+					<h1>なんの診断する？</h1>
+					<div class="btn-group">
+						<a v-for="item in items" class="cross-btn go-btn"
+							v-bind:data-page="[item.page]">
+							<i class="fa fa-chevron-right"></i> {{item.title}}
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="content">
+					<h1>質問設定</h1>
+					<div id="setting">
+						Coming Soon...
+					</div>
+					<div class="btn-group">
+						<a href="#" class="cross-btn go-btn" data-page="1-0">
+							<i class="fa fa-chevron-left"></i> TOPへ戻る
+						</a>
+						<a href="#" class="cross-btn">
+							保存する
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- OTHERS -->
+		<div class="section" v-for="item in items" v-bind:style="item.style"
+			v-bind:data-key="[item.key]">
+			<div class="slide">
+				<div class="content">
+					<h2>{{item.title}}を開始します</h2>
+					<div class="btn-group">
+						<a href="#" class="cross-btn go-btn" data-page="1-0">
+							<i class="fa fa-chevron-left"></i> TOPへ戻る
+						</a>
+						<a href="#" class="cross-btn go-btn" v-bind:data-page="[item.nextPage]">
+							<i class="fa fa-chevron-right"></i> 開始する
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="slide" v-for="list in item.lists">
+				<div class="content">
+					<h3>{{list.q}}</h3>
+					<div class="question-btn-group">
+						<span v-for="a in list.as">
+							<input type="radio" v-bind:name="[list.key]"
+								v-bind:id="[a.key]" v-bind:value="[a.p]">
+							<label v-bind:for="[a.key]">{{a.a}}</label>
+						</span>
+					</div>
+					<div class="btn-group">
+						<a href="#" class="cross-btn go-btn" v-bind:data-page="[list.beforePage]">
+							<i class="fa fa-chevron-left"></i> 戻る
+						</a>
+						<a href="#" class="cross-btn go-btn" v-bind:data-page="[list.nextPage]">
+							<i class="fa fa-chevron-right"></i> 次へ
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="content">
+					<div class="before-result">
+						<h3>
+							お疲れ様でした。
+						</h3>
+						<div class="btn-group">
+							<a href="#" class="cross-btn go-btn" v-bind:data-page="[item.nextPage]">
+								<i class="fa fa-chevron-left"></i> 戻る
+							</a>
+							<a href="#" class="cross-btn result-btn">
+								<i class="fa fa-chevron-right"></i> 診断する
+							</a>
+						</div>
+					</div>
+					<div class="result hide">
+						<div>
+							あなたは...
+						</div>
+						<div>
+							ぼちぼちです。
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="mui-container mui--text-center">
+			<a href="https://github.com/yamachita0109/"
+				target="_brank">GitHub</a>
+		</div>
+	</footer>
+</main>
+
+	<script src="./js/lib/vue.js"></script>
+	<script src="./js/lib/jquery-3.0.0.min.js"></script>
+	<script src="./js/lib/jquery.fullpage.min.js"></script>
+
+	<script src="./js/initVue.js"></script>
+	<script src="./js/initEvent.js"></script>
+	<script src="./js/initRendering.js"></script>
+</body>
+</html>

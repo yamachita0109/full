@@ -1,0 +1,138 @@
+/**
+ * Full Page
+ */
+.section {
+	color: #FFF;
+	background-color: #40AAEF;
+}
+
+.section .content {
+	padding-left: 20%;
+}
+
+.section.btn-group {
+	padding: 0;
+}
+
+.fp-controlArrow {
+	position: fixed;
+	top: -100px;
+}
+
+/**
+ * Header Footer
+ */
+nav {
+	position: fixed;
+	top: 0%;
+	width: 100%;
+	padding: 10px 10px 10px 95%;
+}
+
+footer {
+	position: fixed;
+	bottom: 0%;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+}
+
+/**
+ * Btn Group
+ */
+.question-btn-group {
+	padding: 30px;
+}
+
+.question-btn-group input{
+    display: none;
+}
+.question-btn-group label{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    color: #3e4956;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1;
+}
+.question-btn-group label:before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: #bdc3c7;
+    border-radius: 50%;
+}
+.question-btn-group input[type="radio"]:checked + label:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: -4px;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+    border-radius: 50%;
+    background: #202223;
+}
+
+/**
+ * Cross Btn
+ */
+.cross-btn{
+    display: inline-block;
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+}
+.cross-btn:before, .cross-btn:after{
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+  transition: .3s;
+}
+.cross-btn:before {left: 7px;}
+.cross-btn:after {right: 7px;}
+.cross-btn:hover:before{
+  top: 0px;
+  left:0;
+  height: 100%;
+}
+.cross-btn:hover:after{
+  top: 0px;
+  right: 0;
+  height: 100%;
+}
+
+/**
+ * Common
+ */
+.hide {
+	display: none;
+}
+
+.loading {
+	background-image: url("../img/loading.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.p-10 {
+	padding: 10px;
+}
